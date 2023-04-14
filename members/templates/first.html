@@ -1,0 +1,31 @@
+{% extends "master.html" %}
+
+{% block title %}
+Hello World!
+{% endblock %}
+
+{% block content %}
+<div class="main">
+
+<h1>Hello {{ theadmin.firstname }}, how are you?</h1>
+
+{% if theadmin %}
+
+{% else %}
+
+{% with firstname="Dani" %}
+<h1>Hello {{ firstname }}, how are you?</h1>
+{% endwith %}
+
+{% endif %}
+<h2>Today: {% now "Y-m-d" %}</h2>
+
+<p>Welcome to my first Django project!</p>
+
+<p>Go to <a href="/members/all/">Members</a></p>
+
+{% lorem 50 w %}
+
+</div>
+
+{% endblock %}

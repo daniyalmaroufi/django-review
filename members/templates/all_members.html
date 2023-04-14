@@ -1,0 +1,25 @@
+{% extends "master.html" %}
+
+{% block title %}
+  List of all members
+{% endblock %}
+
+{% block content %}
+
+<div class="mycard">
+
+<h1>Members</h1>
+  
+<ul>
+  {% for x in members %}
+  <li 
+  {% if forloop.first %}
+  class='first-item'
+  {% endif %}
+  >{{ forloop.counter }}. <a href="/members/details/{{ x.slug }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+  {% endfor %}
+</ul>
+
+</div>
+
+{% endblock %}
